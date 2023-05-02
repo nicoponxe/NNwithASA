@@ -23,13 +23,13 @@ epsilon = 1e-8.
 
 def f(x, cache, epsilon):  
 
-cache += x**2  # suma de los cuadrados del input
+    cache += x**2  # suma de los cuadrados del input
   
-# Calculo de tasa de aprendizaje ajustada 
-adjusted_learning_rate = learning_rate / (np.sqrt(cache) + epsilon)  
+    # Calculo de tasa de aprendizaje ajustada 
+    adjusted_learning_rate = learning_rate / (np.sqrt(cache) + epsilon)  
   
-# Aplico ASA  
-return x * adjusted_learning_rate
+    # Aplico ASA  
+    return x * adjusted_learning_rate
 ```
 Datos para entrenar la red neuronal
 Definimos 2 vectores, uno con datos de entrada y otro los de salida, es decir los resultados esperados. 
