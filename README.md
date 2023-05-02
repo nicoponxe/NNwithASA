@@ -6,7 +6,7 @@
 import numpy as np
 ```
 
-Elegimos para esta implementación la funcion de activación sigmoide ya que está acotada, es facilmnte derivable y es monotona.
+Elegimos para esta implementación la funcion de activación sigmoide ya que está acotada, es facilmente derivable y es monotona.
 
 ```
 def sigmoide(x, deriv=False):   
@@ -68,7 +68,8 @@ for iter in range(500):
     # Cuanto error se ha cometido?
     capa1_error = y - capa1   # por cada iteración calculo el error cometido, resto el valor de salida deseado con el obtenido activado
 
-    # Multiplicamos el error por la pendiende de la funcion sigmoide en los valores de capa1, para poder ir disminuyendo el error
+    # Multiplicamos el error por la pendiende de la funcion sigmoide en los valores de capa1, para poder ir disminuyendo el error. 
+    # La función de perdida MSE se encuentra implicita en el calculo 
     capa1_delta = capa1_error * sigmoide(capa1, True)
 
     
