@@ -54,6 +54,10 @@ por la misma cantidad de entradas, con valores al azar con promedio 0.
 ```
 pesos0 = 2*np.random.random((3,1)) - 1
 ```
+Creamos una matriz del mismo tamaño y tipo de datos que la matriz de entrada X, pero con todos los elementos inicializados en cero.
+```
+cache = np.zeros_like(X)
+```
 ```
 # Iteramos 500 veces
 for iter in range(500):
