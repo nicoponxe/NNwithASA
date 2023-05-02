@@ -73,9 +73,9 @@ for iter in range(500):
 
     
     # Computamos la funcion f(X) para el input matriz X
-	 f_X = f(capa0, cache, epsilon)
+    f_X = f(capa0, cache, epsilon)
     # Actualizamos los pesos0
-     pesos0 += np.dot(f_X.T, capa1_delta)
+    pesos0 += np.dot(f_X.T, capa1_delta)
    
 ```
 Imprimimos resultado:
