@@ -57,6 +57,7 @@ Iniciamos `pesos0` con valores aleatorios centrados alrededor de 0 para evitar s
 pesos0 = 2*np.random.random((3,1)) - 1
 ```
 Creamos una matriz del mismo tamaño y tipo de datos que la matriz de entrada X, pero con todos los elementos inicializados en cero.
+La matriz caché se utiliza para almacenar la suma de los cuadrados de los valores de entrada, que luego se utiliza para ajustar la tasa de aprendizaje utilizando el método de Ajuste Sináptico Adaptativo.
 ```
 cache = np.zeros_like(X)
 ```
