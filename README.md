@@ -58,6 +58,16 @@ Creamos una matriz del mismo tamaño y tipo de datos que la matriz de entrada X,
 ```
 cache = np.zeros_like(X)
 ```
+Defino una tasa de aprendizaje inicial que luego será modificada bajo el modelo ASA. El valor definido para Epsilon es para evitar la división por 0 en el calculo de la tasa de aprendizaje.
+```
+learning_rate = 2.5
+epsilon = 1e-8
+```
+Creamos tambíen una lista vacía para luego ir agregando los errores en cada iteración para visualizarlo luego.
+```
+errors = []
+```
+
 ```
 # Iteramos 500 veces
 for iter in range(500):
@@ -67,7 +77,8 @@ for iter in range(500):
 
     # Cuanto error se ha cometido?
     capa1_error = y - capa1   # por cada iteración calculo el error cometido, resto el valor de salida deseado con el obtenido activado
-
+    errors.append(np.mean(np.abs(capa1_error))) # Calculo y almaceno el error en cada iteración
+    
     # Multiplicamos el error por la pendiende de la funcion sigmoide en los valores de capa1, para poder ir disminuyendo el error. 
     # La función de perdida MSE se encuentra implicita en el calculo 
     capa1_delta = capa1_error * sigmoide(capa1, True)
@@ -89,4 +100,15 @@ print (capa1)
 
 <img width="403" alt="Captura de pantalla 2023-05-02 a la(s) 16 38 15" src="https://user-images.githubusercontent.com/24212744/235770213-adf538f6-e4a2-42ba-a829-1a747d00807c.png">
 
+Resultado en plot que muestra como el error absoluto tiende a disminuir con cada iteración:
+
+```
+plt.plot(errors)
+plt.title('Error')
+plt.xlabel('Iteration')
+plt.ylabel('Mean Absolute Error')
+plt.show()
+
+```
+<img width="612" alt="Captura de pantalla 2023-05-02 a la(s) 21 06 24" src="https://user-images.githubusercontent.com/24212744/235810524-a98b1ecc-7799-4527-957e-8b48ce4e3273.png">
 
