@@ -51,6 +51,8 @@ np.random.seed(1)
 `pesos0` debe ser un array de dimension (3,1) ya que estos pesos deben ser multiplicados 
 
 por la misma cantidad de entradas, con valores al azar con promedio 0. 
+
+Iniciamos los pesos 0 con valores aleatorios centrados alrededor de 0 para evitar sesgos.
 ```
 pesos0 = 2*np.random.random((3,1)) - 1
 ```
